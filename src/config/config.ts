@@ -5,9 +5,10 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV}`, override: true });
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME || '';
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD || '';
+const MONGO_HOST = process.env.MONGO_HOST || '';
+
 const MONGO_URL =
-  process.env.MONGO_URL ||
-  `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.menvh.mongodb.net/db`;
+  process.env.MONGO_URL || `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}`;
 
 const SERVER_PORT = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 1337;
 
